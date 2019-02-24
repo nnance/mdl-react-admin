@@ -1,5 +1,19 @@
 import React from "react";
 
+const items = ["hello@example.com", "info@example.com", "Add another account..."]
+const listItems = items.map((item, index) =>
+  <li key="{index}" className="mdl-menu__item">{item}</li>
+)
+
+const menuList = () =>
+  <ul
+    className="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+    // htmlFor="accbtn"
+  >
+    {listItems}
+  </ul>
+
+
 class AccountHeader extends React.Component {
   render() {
     return (
@@ -17,6 +31,7 @@ class AccountHeader extends React.Component {
             </i>
             <span className="visuallyhidden">Accounts</span>
           </button>
+          {menuList}
         </div>
       </header>
     );

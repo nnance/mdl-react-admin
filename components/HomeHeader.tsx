@@ -1,5 +1,18 @@
 import React from "react";
 
+const items = ["About", "Contact", "Legal information"]
+const listItems = items.map((item, index) =>
+  <li key="{index}" className="mdl-menu__item">{item}</li>
+)
+
+const menuList = () =>
+  <ul
+    className="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right"
+    // htmlFor="hdrbtn"
+  >
+    {listItems}
+  </ul>
+
 class HomeHeader extends React.Component {
   render() {
     return (
@@ -27,6 +40,7 @@ class HomeHeader extends React.Component {
           >
             <i className="material-icons">more_vert</i>
           </button>
+          {menuList}
         </div>
       </header>
     );
