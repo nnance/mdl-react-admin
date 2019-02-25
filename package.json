@@ -27,7 +27,5 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {
-    "svg-inline-loader": "^0.8.0"
-  }
+  "devDependencies": {}
 }

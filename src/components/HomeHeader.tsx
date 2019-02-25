@@ -1,19 +1,20 @@
 import React from "react";
+import ReactDOM from "react-dom";
 
-const items = ["About", "Contact", "Legal information"]
-const listItems = items.map((item, index) =>
-  <li key="{index}" className="mdl-menu__item">{item}</li>
+const headerItems = ["About", "Contact", "Legal information"]
+
+const listItems = (items: string[]) => items.map((item, index) =>
+  <li key={index} className="mdl-menu__item">{item}</li>
 )
 
-const menuList = () =>
-  <ul
-    className="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right"
-    // htmlFor="hdrbtn"
-  >
-    {listItems}
-  </ul>
-
 class HomeHeader extends React.Component {
+  componentDidMount() {
+    const element = ReactDOM.findDOMNode(this.refs.hdrMenu) as Element;
+    if (element) {
+      element.setAttribute("for", "hdrbtn");
+    }
+  }
+
   render() {
     return (
       <header className="demo-header mdl-layout__header mdl-color--grey-100 mdl-color-text--grey-600">
@@ -40,7 +41,12 @@ class HomeHeader extends React.Component {
           >
             <i className="material-icons">more_vert</i>
           </button>
-          {menuList}
+          <ul
+            className="mdl-menu mdl-js-menu mdl-js-ripple-effect mdl-menu--bottom-right"
+            ref="hdrMenu"
+          >
+            {listItems(headerItems)}
+          </ul>
         </div>
       </header>
     );
