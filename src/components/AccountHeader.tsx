@@ -1,4 +1,5 @@
 import React from "react";
+import user from '../images/user.jpg';
 
 const items = ["hello@example.com", "info@example.com", "Add another account..."]
 const listItems = items.map((item, index) =>
@@ -18,7 +19,7 @@ class AccountHeader extends React.Component {
   render() {
     return (
       <header className="demo-drawer-header">
-        <img src="images/user.jpg" className="demo-avatar" />
+        <img src={user} className="demo-avatar" />
         <div className="demo-avatar-dropdown">
           <span>hello@example.com</span>
           <div className="mdl-layout-spacer" />
