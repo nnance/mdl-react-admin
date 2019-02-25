@@ -1,6 +1,10 @@
 import React from "react";
 
-class PieChart extends React.Component {
+interface Props {
+  value: string
+}
+
+class PieChart extends React.Component<Props> {
   render() {
     return (
       <svg
@@ -20,7 +24,7 @@ class PieChart extends React.Component {
           textAnchor="middle"
           dy="0.1"
         >
-          82
+          {this.props.value}
           <tspan fontSize="0.2" dy="-0.07">
             %
           </tspan>

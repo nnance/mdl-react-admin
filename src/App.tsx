@@ -1,15 +1,16 @@
 import React from 'react';
 import './App.css';
-import Description from './Description';
-import Header from './Header';
-import logo from './logo.svg';
+import HomeHeader from "./components/HomeHeader";
+import SideBarContainer from "./components/SideBarContainer";
+import BodyContainer from "./components/BodyContainer";
 
 class App extends React.Component {
   public render() {
     return (
-      <div className="App">
-        <Header name="Nick" />
-        <Description countBy={3} />
+      <div className="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+        <HomeHeader />
+        <SideBarContainer />
+        <BodyContainer />
       </div>
     );
   }
